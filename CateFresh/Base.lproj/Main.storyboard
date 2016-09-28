@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CateFresh" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q91-bc-Paf">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="UL1-o6-5ab">
+                                <rect key="frame" x="122" y="30" width="357" height="539"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="dgq-fu-11v">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="539"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvS-Ww-duK">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                                <color key="backgroundColor" red="1" green="0.84705882352941175" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="175" id="Acm-W6-Owd"/>
+                                                    <constraint firstAttribute="width" constant="175" id="GxL-IT-Zar"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                                <state key="normal" title="Bus">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEg-Ho-YBo">
+                                                <rect key="frame" x="0.0" y="182" width="175" height="175"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="175" id="Miv-kC-kgl"/>
+                                                    <constraint firstAttribute="width" constant="175" id="oZ9-ZE-0Mp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                                <state key="normal" title="Gov">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6B-cK-Og6">
+                                                <rect key="frame" x="0.0" y="364" width="175" height="175"/>
+                                                <color key="backgroundColor" red="1" green="0.88889443204109053" blue="0.53119796067113501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="175" id="3az-i1-yRP"/>
+                                                    <constraint firstAttribute="height" constant="175" id="l3R-o1-ipE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                                <state key="normal" title="Map">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ouM-We-aQI">
+                                        <rect key="frame" x="182" y="0.0" width="175" height="539"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuR-wN-deA">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="175" id="1vB-io-ERd"/>
+                                                    <constraint firstAttribute="height" constant="175" id="fRA-ew-KAo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                                <state key="normal" title="Handbook">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHj-5i-wZh">
+                                                <rect key="frame" x="0.0" y="182" width="175" height="175"/>
+                                                <color key="backgroundColor" red="0.93320312500000002" green="0.10832867806196035" blue="0.92260807795089506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="175" id="AFF-br-udl"/>
+                                                    <constraint firstAttribute="width" constant="175" id="yZu-oA-O2D"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                                <state key="normal" title="Hours">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVu-Ne-8LX">
+                                                <rect key="frame" x="0.0" y="364" width="175" height="175"/>
+                                                <color key="backgroundColor" red="0.0" green="0.93320312500000002" blue="0.02387121004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="175" id="NfZ-gY-63K"/>
+                                                    <constraint firstAttribute="width" constant="175" id="XBL-Pc-PQ8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                                <state key="normal" title="Carp">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q91-bc-Paf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DDj-fy-5PB"/>
+                            <constraint firstItem="UL1-o6-5ab" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KEx-OW-fMh"/>
+                            <constraint firstItem="q91-bc-Paf" firstAttribute="centerX" secondItem="UL1-o6-5ab" secondAttribute="centerX" id="NGO-ro-6nh"/>
+                            <constraint firstItem="UL1-o6-5ab" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gFC-Ae-JbF"/>
+                            <constraint firstItem="q91-bc-Paf" firstAttribute="centerY" secondItem="UL1-o6-5ab" secondAttribute="centerY" id="gkR-LH-UWp"/>
+                            <constraint firstItem="q91-bc-Paf" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="v8Y-DX-rVB"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="311"/>
+        </scene>
+    </scenes>
+</document>
