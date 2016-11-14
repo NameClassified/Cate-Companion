@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E2983481DD12C4B00F35324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E2983471DD12C4B00F35324 /* Assets.xcassets */; };
+		3E32E5331DC53C6F0079B0C0 /* CarpLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E32E5321DC53C6F0079B0C0 /* CarpLocation.swift */; };
+		3E32E5351DC564320079B0C0 /* hoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E32E5341DC564320079B0C0 /* hoursViewController.swift */; };
 		3E3F37F21DC275070038E8BA /* pdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F37F11DC275070038E8BA /* pdfViewController.swift */; };
 		3E3F37F41DC277800038E8BA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F37F31DC277800038E8BA /* File.swift */; };
 		3E756CA31DC3EBE40078A09B /* handbook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3E756CA21DC3EBE40078A09B /* handbook.pdf */; };
 		3E756CA51DC3EBEB0078A09B /* map.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3E756CA41DC3EBEB0078A09B /* map.pdf */; };
 		3E756CA71DC3EC630078A09B /* constitution.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3E756CA61DC3EC630078A09B /* constitution.pdf */; };
 		3E756CAC1DC3EDCC0078A09B /* bus.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3E756CAB1DC3EDCC0078A09B /* bus.pdf */; };
-		3E756CB01DC3FBD40078A09B /* hours.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3E756CAF1DC3FBD40078A09B /* hours.pdf */; };
 		3E756CB21DC3FC160078A09B /* carp.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3E756CB11DC3FC160078A09B /* carp.pdf */; };
+		3E9EBFD01DC53911001349CF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EBFCF1DC53911001349CF /* MapViewController.swift */; };
+		3E9EBFD31DC539DA001349CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9EBFD21DC539DA001349CF /* MapKit.framework */; };
+		3EF4BC361DC7B9D400812ACC /* hours.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3EF4BC351DC7B9D400812ACC /* hours.pdf */; };
 		CF7C7BE81D650EDD00E93F8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C7BE71D650EDD00E93F8B /* AppDelegate.swift */; };
 		CF7C7BEA1D650EDD00E93F8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C7BE91D650EDD00E93F8B /* ViewController.swift */; };
 		CF7C7BED1D650EDD00E93F8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7C7BEB1D650EDD00E93F8B /* Main.storyboard */; };
-		CF7C7BEF1D650EDD00E93F8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF7C7BEE1D650EDD00E93F8B /* Assets.xcassets */; };
 		CF7C7BF21D650EDD00E93F8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7C7BF01D650EDD00E93F8B /* LaunchScreen.storyboard */; };
 		CF7C7BFD1D650EDD00E93F8B /* CateFreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C7BFC1D650EDD00E93F8B /* CateFreshTests.swift */; };
 		CF7C7C081D650EDD00E93F8B /* CateFreshUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C7C071D650EDD00E93F8B /* CateFreshUITests.swift */; };
@@ -42,19 +46,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E2983471DD12C4B00F35324 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E32E5321DC53C6F0079B0C0 /* CarpLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarpLocation.swift; sourceTree = "<group>"; };
+		3E32E5341DC564320079B0C0 /* hoursViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hoursViewController.swift; sourceTree = "<group>"; };
 		3E3F37F11DC275070038E8BA /* pdfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pdfViewController.swift; sourceTree = "<group>"; };
 		3E3F37F31DC277800038E8BA /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		3E756CA21DC3EBE40078A09B /* handbook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = handbook.pdf; sourceTree = "<group>"; };
 		3E756CA41DC3EBEB0078A09B /* map.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = map.pdf; sourceTree = "<group>"; };
 		3E756CA61DC3EC630078A09B /* constitution.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = constitution.pdf; sourceTree = "<group>"; };
 		3E756CAB1DC3EDCC0078A09B /* bus.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = bus.pdf; sourceTree = "<group>"; };
-		3E756CAF1DC3FBD40078A09B /* hours.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = hours.pdf; sourceTree = "<group>"; };
 		3E756CB11DC3FC160078A09B /* carp.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = carp.pdf; sourceTree = "<group>"; };
+		3E9EBFCF1DC53911001349CF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3E9EBFD21DC539DA001349CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3EF4BC351DC7B9D400812ACC /* hours.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = hours.pdf; sourceTree = "<group>"; };
 		CF7C7BE41D650EDD00E93F8B /* CateFresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CateFresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7C7BE71D650EDD00E93F8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF7C7BE91D650EDD00E93F8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF7C7BEC1D650EDD00E93F8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CF7C7BEE1D650EDD00E93F8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF7C7BF11D650EDD00E93F8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF7C7BF31D650EDD00E93F8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF7C7BF81D650EDD00E93F8B /* CateFreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CateFreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9EBFD31DC539DA001349CF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E9EBFD11DC539DA001349CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E9EBFD21DC539DA001349CF /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CF7C7BDB1D650EDD00E93F8B = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +114,7 @@
 				CF7C7BFB1D650EDD00E93F8B /* CateFreshTests */,
 				CF7C7C061D650EDD00E93F8B /* CateFreshUITests */,
 				CF7C7BE51D650EDD00E93F8B /* Products */,
+				3E9EBFD11DC539DA001349CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,18 +133,21 @@
 			children = (
 				CF7C7BE71D650EDD00E93F8B /* AppDelegate.swift */,
 				CF7C7BE91D650EDD00E93F8B /* ViewController.swift */,
-				CF7C7BEB1D650EDD00E93F8B /* Main.storyboard */,
-				3E3F37F31DC277800038E8BA /* File.swift */,
+				3E32E5341DC564320079B0C0 /* hoursViewController.swift */,
+				3E9EBFCF1DC53911001349CF /* MapViewController.swift */,
 				3E3F37F11DC275070038E8BA /* pdfViewController.swift */,
+				3E32E5321DC53C6F0079B0C0 /* CarpLocation.swift */,
+				3E3F37F31DC277800038E8BA /* File.swift */,
+				CF7C7BEB1D650EDD00E93F8B /* Main.storyboard */,
 				3E756CA21DC3EBE40078A09B /* handbook.pdf */,
+				3EF4BC351DC7B9D400812ACC /* hours.pdf */,
 				3E756CAB1DC3EDCC0078A09B /* bus.pdf */,
 				3E756CB11DC3FC160078A09B /* carp.pdf */,
-				3E756CAF1DC3FBD40078A09B /* hours.pdf */,
 				3E756CA41DC3EBEB0078A09B /* map.pdf */,
 				3E756CA61DC3EC630078A09B /* constitution.pdf */,
-				CF7C7BEE1D650EDD00E93F8B /* Assets.xcassets */,
 				CF7C7BF01D650EDD00E93F8B /* LaunchScreen.storyboard */,
 				CF7C7BF31D650EDD00E93F8B /* Info.plist */,
+				3E2983471DD12C4B00F35324 /* Assets.xcassets */,
 			);
 			path = CateFresh;
 			sourceTree = "<group>";
@@ -217,7 +238,13 @@
 				TargetAttributes = {
 					CF7C7BE31D650EDD00E93F8B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2X38X69B45;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					CF7C7BF71D650EDD00E93F8B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -257,13 +284,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E756CA51DC3EBEB0078A09B /* map.pdf in Resources */,
+				3EF4BC361DC7B9D400812ACC /* hours.pdf in Resources */,
 				3E756CAC1DC3EDCC0078A09B /* bus.pdf in Resources */,
-				3E756CB01DC3FBD40078A09B /* hours.pdf in Resources */,
 				CF7C7BF21D650EDD00E93F8B /* LaunchScreen.storyboard in Resources */,
-				CF7C7BEF1D650EDD00E93F8B /* Assets.xcassets in Resources */,
 				3E756CA31DC3EBE40078A09B /* handbook.pdf in Resources */,
 				CF7C7BED1D650EDD00E93F8B /* Main.storyboard in Resources */,
 				3E756CA71DC3EC630078A09B /* constitution.pdf in Resources */,
+				3E2983481DD12C4B00F35324 /* Assets.xcassets in Resources */,
 				3E756CB21DC3FC160078A09B /* carp.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +319,10 @@
 				CF7C7BEA1D650EDD00E93F8B /* ViewController.swift in Sources */,
 				3E3F37F41DC277800038E8BA /* File.swift in Sources */,
 				3E3F37F21DC275070038E8BA /* pdfViewController.swift in Sources */,
+				3E9EBFD01DC53911001349CF /* MapViewController.swift in Sources */,
+				3E32E5331DC53C6F0079B0C0 /* CarpLocation.swift in Sources */,
 				CF7C7BE81D650EDD00E93F8B /* AppDelegate.swift in Sources */,
+				3E32E5351DC564320079B0C0 /* hoursViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2X38X69B45;
 				INFOPLIST_FILE = CateFresh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pan.CateFresh;
@@ -453,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2X38X69B45;
 				INFOPLIST_FILE = CateFresh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pan.CateFresh;

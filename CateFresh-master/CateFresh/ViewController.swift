@@ -25,11 +25,11 @@ class ViewController: UIViewController {
     }
     @IBAction func carpTapped(_ sender: AnyObject) {
         file.name = "carp.pdf"
-        performSegue(withIdentifier: "pdfSegue", sender: file)
+        performSegue(withIdentifier: "mapSegue", sender: file)
     }
     @IBAction func hoursTapped(_ sender: AnyObject) {
         file.name = "hours.pdf"
-        performSegue(withIdentifier: "pdfSegue", sender: file)
+        performSegue(withIdentifier: "hoursSegue", sender: file)
     }
     @IBAction func busTapped(_ sender: AnyObject) {
         file.name = "bus.pdf"
@@ -37,8 +37,17 @@ class ViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let defVC = segue.destination as! pdfViewController
-        defVC.file = (sender as? File)!
+        
+        if segue.identifier == "pdfSegue" {
+            let defVC = segue.destination as! pdfViewController
+            defVC.file = (sender as? File)!
+        } else if segue.identifier == "mapSegue" {
+            let defVC = segue.destination as! MapViewController
+            defVC.file = (sender as? File)!
+        } else {
+            let defVC = segue.destination as! hoursViewController
+            defVC.file = (sender as? File)!
+        }
     }
     
     override func viewDidLoad() {
