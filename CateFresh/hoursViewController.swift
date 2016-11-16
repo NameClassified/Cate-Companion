@@ -73,7 +73,7 @@ class hoursViewController: UIViewController {
 
         if healthStatus.open {
             healthLabel.text = "Heath Center closes " + convertToString(secs: healthStatus.seconds)
-            healthLabel.textColor = UIColor.green
+            healthLabel.textColor = UIColor.blue
         } else {
             healthLabel.text = "Heath Center opens " + convertToString(secs: healthStatus.seconds)
             healthLabel.textColor = UIColor.red
@@ -81,7 +81,7 @@ class hoursViewController: UIViewController {
         
         if poolStatus.open {
             poolLabel.text = "Pool closes " + convertToString(secs: poolStatus.seconds)
-            poolLabel.textColor = UIColor.green
+            poolLabel.textColor = UIColor.blue
         } else {
             poolLabel.text = "Pool opens " + convertToString(secs: poolStatus.seconds)
             poolLabel.textColor = UIColor.red
@@ -89,7 +89,7 @@ class hoursViewController: UIViewController {
         
         if restStatus.open {
             restLabel.text = "Theater, Keck Lab, and Classrooms close " + convertToString(secs: restStatus.seconds)
-            restLabel.textColor = UIColor.green
+            restLabel.textColor = UIColor.blue
         } else {
             restLabel.text = "Theater, Keck Lab, and Classrooms open " + convertToString(secs: restStatus.seconds)
             restLabel.textColor = UIColor.red
@@ -106,7 +106,7 @@ class hoursViewController: UIViewController {
             if dinnerStatus.open {
                 diningLabel.text = "Dinner closes " + convertToString(secs: dinnerStatus.seconds)
             }
-            diningLabel.textColor = UIColor.green
+            diningLabel.textColor = UIColor.blue
         } else {
             //check next meal
             
