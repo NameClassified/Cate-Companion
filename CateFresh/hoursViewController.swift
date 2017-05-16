@@ -2,13 +2,30 @@
 //  hoursViewController.swift
 //  CateFresh
 //
-//  Created by Jeff Pan on 10/29/16.
+//  Created by Connor Pan on 10/29/16.
 //  Copyright © 2016 Connor Pan. All rights reserved.
 //
 
 import UIKit
 
 class hoursViewController: UIViewController {
+    
+    var hoursTxtLoaded = true
+    
+    struct hoursStruct {
+        var openSeconds: Double = 0.0
+        var closeSeconds: Double = 0.0
+    }
+    
+    var healthArray = [hoursStruct](repeatElement(.init(openSeconds: 0.0, closeSeconds: 0.0), count: 7))
+    var keckArray = [hoursStruct](repeatElement(.init(openSeconds: 0.0, closeSeconds: 0.0), count: 7))
+    var theaterArray = [hoursStruct](repeatElement(.init(openSeconds: 0.0, closeSeconds: 0.0), count: 7))
+    var classroomArray = [hoursStruct](repeatElement(.init(openSeconds: 0.0, closeSeconds: 0.0), count: 7))
+    var breakfastArray = [hoursStruct](repeatElement(.init(openSeconds: 0.0, closeSeconds: 0.0), count: 7))
+    var lunchArray = [hoursStruct](repeatElement(.init(openSeconds: 0.0, closeSeconds: 0.0), count: 7))
+    var dinnerArray = [hoursStruct](repeatElement(.init(openSeconds: 0.0, closeSeconds: 0.0), count: 7))
+    var poolArray = [hoursStruct](repeatElement(.init(openSeconds: 0.0, closeSeconds: 0.0), count: 7))
+
     struct status {
         var seconds :Double
         var open :Bool
@@ -18,9 +35,11 @@ class hoursViewController: UIViewController {
 
 
     @IBOutlet weak var healthLabel: UILabel!
-    @IBOutlet weak var restLabel: UILabel!
+    @IBOutlet weak var keckLabel: UILabel!
     @IBOutlet weak var diningLabel: UILabel!
     @IBOutlet weak var poolLabel: UILabel!
+    @IBOutlet weak var theaterLabel: UILabel!
+    @IBOutlet weak var classroomLabel: UILabel!
     @IBOutlet weak var webView: UIWebView!
     
     let userCalendar = Calendar.current
@@ -28,113 +47,137 @@ class hoursViewController: UIViewController {
 
     override func viewDidLoad() {
         
-        //Change hours in these constants as seconds from midnight
-        let healthOpen = 7.0 * 3600.0
-        let healthClose = 18.5 * 3600.0
-        let poolOpen = 7.0 * 3600.0
-        let poolClose = 19.0 * 3600.0
-        let breakfastOpen = 6.5 * 3600.0
-        let breakfastClose = 8.75 * 3600.0
-        let lunchOpen = (11.0 + (25.0/60.0)) * 3600.0
-        let lunchClose = (12.0 * (35.0/60.0)) * 3600.0
-        let dinnerOpen = 17.5 * 3600.0
-        let dinnerClose = 19.0 * 3600.0
-        let restOpen = 7.0 * 3600.0
-        let restClose = 23.0 * 3600.0
+        makeHoursArray()
         
         var healthStatus = status(seconds: 0.0, open: false)
-        var restStatus = status(seconds: 0.0, open: false)
+        var keckStatus = status(seconds: 0.0, open: false)
+        var theaterStatus = status(seconds: 0.0, open: false)
+        var classroomStatus = status(seconds: 0.0, open: false)
         var poolStatus = status(seconds: 0.0, open: false)
         
         var breakfastStatus = status(seconds: 0.0, open: false)
         var lunchStatus = status(seconds: 0.0, open: false)
         var dinnerStatus = status(seconds: 0.0, open: false)
         
-        healthStatus = determineStatus(openSeconds: healthOpen, closeSeconds: healthClose)
-        restStatus = determineStatus(openSeconds: restOpen, closeSeconds: restClose)
-        poolStatus = determineStatus(openSeconds: poolOpen, closeSeconds: poolClose)
-        breakfastStatus = determineStatus(openSeconds: breakfastOpen, closeSeconds: breakfastClose)
-        lunchStatus = determineStatus(openSeconds: lunchOpen, closeSeconds: lunchClose)
-        dinnerStatus = determineStatus(openSeconds: dinnerOpen, closeSeconds: dinnerClose)
+        var anchorComponents = Calendar.current.dateComponents([.day, .month, .year, .weekday], from: Date())
+        let dayOfWeek = anchorComponents.weekday!
+        let nextDay = (dayOfWeek % 7) + 1
         
-        // Get the document's file path.
-        let path = Bundle.main.path(forResource: file.name, ofType: nil)
+        healthStatus = determineStatus(openSeconds: healthArray[dayOfWeek - 1].openSeconds, closeSeconds: healthArray[dayOfWeek - 1].closeSeconds, nextDayOpenSeconds: healthArray[nextDay - 1].openSeconds)
+        keckStatus = determineStatus(openSeconds: keckArray[dayOfWeek - 1].openSeconds, closeSeconds: keckArray[dayOfWeek - 1].closeSeconds, nextDayOpenSeconds: keckArray[nextDay - 1].openSeconds)
+        theaterStatus = determineStatus(openSeconds: theaterArray[dayOfWeek - 1].openSeconds, closeSeconds: theaterArray[dayOfWeek - 1].closeSeconds, nextDayOpenSeconds: theaterArray[nextDay - 1].openSeconds)
+        classroomStatus = determineStatus(openSeconds: classroomArray[dayOfWeek - 1].openSeconds, closeSeconds: classroomArray[dayOfWeek - 1].closeSeconds, nextDayOpenSeconds: classroomArray[nextDay - 1].openSeconds)
+        poolStatus = determineStatus(openSeconds: poolArray[dayOfWeek - 1].openSeconds, closeSeconds: poolArray[dayOfWeek - 1].closeSeconds, nextDayOpenSeconds: poolArray[nextDay - 1].openSeconds)
+        breakfastStatus = determineStatus(openSeconds: breakfastArray[dayOfWeek - 1].openSeconds, closeSeconds: breakfastArray[dayOfWeek - 1].closeSeconds, nextDayOpenSeconds: breakfastArray[nextDay - 1].openSeconds)
+        lunchStatus = determineStatus(openSeconds: lunchArray[dayOfWeek - 1].openSeconds, closeSeconds: lunchArray[dayOfWeek - 1].closeSeconds, nextDayOpenSeconds: lunchArray[nextDay - 1].openSeconds)
+        dinnerStatus = determineStatus(openSeconds: dinnerArray[dayOfWeek - 1].openSeconds, closeSeconds: dinnerArray[dayOfWeek - 1].closeSeconds, nextDayOpenSeconds: dinnerArray[nextDay - 1].openSeconds)
         
-        // Create an NSURL object based on the file path.
-        let url = NSURL.fileURL(withPath: path!)
+        let fileMgr = FileManager.default
         
-        // Create an NSURLRequest object.
-        let request = NSURLRequest(url: url)
-        
-        // Load the web viewer using the request object.
-        webView.loadRequest(request as URLRequest)
+        if !fileMgr.fileExists(atPath: file.name + "/pdfhours.pdf") {
+            
+            let alertController = UIAlertController(title: "Missing Data File", message: "\"pdfhours.pdf\" is missing", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+            {
+                (result : UIAlertAction) -> Void in
+            }
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            // Create an NSURL object based on the file path.
+            let url = NSURL.fileURL(withPath: file.name + "/pdfhours.pdf")
+            
+            // Create an NSURLRequest object.
+            let request = NSURLRequest(url: url)
+            
+            // Load the web viewer using the request object.
+            webView.loadRequest(request as URLRequest)
+        }
         
         super.viewDidLoad()
 
-        if healthStatus.open {
-            healthLabel.text = "Heath Center closes " + convertToString(secs: healthStatus.seconds)
-            healthLabel.textColor = UIColor.blue
-        } else {
-            healthLabel.text = "Heath Center opens " + convertToString(secs: healthStatus.seconds)
-            healthLabel.textColor = UIColor.red
-        }
-        
-        if poolStatus.open {
-            poolLabel.text = "Pool closes " + convertToString(secs: poolStatus.seconds)
-            poolLabel.textColor = UIColor.blue
-        } else {
-            poolLabel.text = "Pool opens " + convertToString(secs: poolStatus.seconds)
-            poolLabel.textColor = UIColor.red
-        }
-        
-        if restStatus.open {
-            restLabel.text = "Theater, Keck Lab, and Classrooms close " + convertToString(secs: restStatus.seconds)
-            restLabel.textColor = UIColor.blue
-        } else {
-            restLabel.text = "Theater, Keck Lab, and Classrooms open " + convertToString(secs: restStatus.seconds)
-            restLabel.textColor = UIColor.red
-        }
-        
-        //check if it's meal time
-        if breakfastStatus.open || lunchStatus.open || dinnerStatus.open {
-            if breakfastStatus.open {
-                diningLabel.text = "Breakfast closes " + convertToString(secs: breakfastStatus.seconds)
-            }
-            if lunchStatus.open {
-                diningLabel.text = "Lunch closes " + convertToString(secs: lunchStatus.seconds)
-            }
-            if dinnerStatus.open {
-                diningLabel.text = "Dinner closes " + convertToString(secs: dinnerStatus.seconds)
-            }
-            diningLabel.textColor = UIColor.blue
-        } else {
-            //check next meal
-            
-            if breakfastStatus.seconds < lunchStatus.seconds {
-                if breakfastStatus.seconds < dinnerStatus.seconds {
-                    //breakfast is next
-                    diningLabel.text = "Breakfast opens " + convertToString(secs: breakfastStatus.seconds)
-                } else {
-                    //dinner is next
-                    diningLabel.text = "Dinner opens " + convertToString(secs: dinnerStatus.seconds)
-                    
-                }
+        if hoursTxtLoaded == true {
+            if healthStatus.open {
+                healthLabel.text = "Heath Center closes " + convertToString(secs: healthStatus.seconds)
+                healthLabel.textColor = UIColor.blue
             } else {
-                if lunchStatus.seconds < dinnerStatus.seconds {
-                    //lunch is next
-                    diningLabel.text = "Lunch opens " + convertToString(secs: lunchStatus.seconds)
+                healthLabel.text = "Heath Center opens " + convertToString(secs: healthStatus.seconds)
+                healthLabel.textColor = UIColor.red
+            }
+            
+            if poolStatus.open {
+                poolLabel.text = "Pool closes " + convertToString(secs: poolStatus.seconds)
+                poolLabel.textColor = UIColor.blue
+            } else {
+                poolLabel.text = "Pool opens " + convertToString(secs: poolStatus.seconds)
+                poolLabel.textColor = UIColor.red
+            }
+            
+            if keckStatus.open {
+                keckLabel.text = "Keck Lab closes " + convertToString(secs: keckStatus.seconds)
+                keckLabel.textColor = UIColor.blue
+            } else {
+                keckLabel.text = "Keck Lab opens " + convertToString(secs: keckStatus.seconds)
+                keckLabel.textColor = UIColor.red
+            }
+            
+            if theaterStatus.open {
+                theaterLabel.text = "Theater closes " + convertToString(secs: theaterStatus.seconds)
+                theaterLabel.textColor = UIColor.blue
+            } else {
+                theaterLabel.text = "Theater opens " + convertToString(secs: theaterStatus.seconds)
+                theaterLabel.textColor = UIColor.red
+            }
+            
+            if classroomStatus.open {
+                classroomLabel.text = "Classrooms close " + convertToString(secs: classroomStatus.seconds)
+                classroomLabel.textColor = UIColor.blue
+            } else {
+                classroomLabel.text = "Classrooms open " + convertToString(secs: classroomStatus.seconds)
+                classroomLabel.textColor = UIColor.red
+            }
+
+            //check if it's meal time
+            if breakfastStatus.open || lunchStatus.open || dinnerStatus.open {
+                if breakfastStatus.open {
+                    diningLabel.text = "Breakfast closes " + convertToString(secs: breakfastStatus.seconds)
+                }
+                if lunchStatus.open {
+                    diningLabel.text = "Lunch closes " + convertToString(secs: lunchStatus.seconds)
+                }
+                if dinnerStatus.open {
+                    diningLabel.text = "Dinner closes " + convertToString(secs: dinnerStatus.seconds)
+                }
+                diningLabel.textColor = UIColor.blue
+            } else {
+                //check next meal
+                
+                if breakfastStatus.seconds < lunchStatus.seconds {
+                    if breakfastStatus.seconds < dinnerStatus.seconds {
+                        //breakfast is next
+                        diningLabel.text = "Breakfast opens " + convertToString(secs: breakfastStatus.seconds)
+                    } else {
+                        //dinner is next
+                        diningLabel.text = "Dinner opens " + convertToString(secs: dinnerStatus.seconds)
+                        
+                    }
                 } else {
-                    //dinner is next
-                    diningLabel.text = "Dinner opens " + convertToString(secs: dinnerStatus.seconds)
+                    if lunchStatus.seconds < dinnerStatus.seconds {
+                        //lunch is next
+                        diningLabel.text = "Lunch opens " + convertToString(secs: lunchStatus.seconds)
+                    } else {
+                        //dinner is next
+                        diningLabel.text = "Dinner opens " + convertToString(secs: dinnerStatus.seconds)
+                        
+                    }
                     
                 }
-                
+                diningLabel.textColor = UIColor.red
             }
-            diningLabel.textColor = UIColor.red
-            
         }
-        
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -156,7 +199,7 @@ class hoursViewController: UIViewController {
         return closeSeconds - date.timeIntervalSince(startOfToday)
     }
     
-    func determineStatus(openSeconds: Double, closeSeconds: Double) -> status {
+    func determineStatus(openSeconds: Double, closeSeconds: Double, nextDayOpenSeconds: Double) -> status {
         let open = secondsUntilOpen(openSeconds: openSeconds)
         let close = secondsUntilClose(closeSeconds: closeSeconds)
         var returnStatus = status(seconds: 0.0, open: false)
@@ -174,7 +217,7 @@ class hoursViewController: UIViewController {
             } else {
                 //closed
                 returnStatus.open = false
-                returnStatus.seconds = 86400.0 + open
+                returnStatus.seconds = 86400.0 + secondsUntilOpen(openSeconds: nextDayOpenSeconds)
             }
             
         }
@@ -211,7 +254,111 @@ class hoursViewController: UIViewController {
         }
         return statusString
     }
+    
+    func makeHoursArray() {
+        let fileMgr = FileManager.default
+        
+        if fileMgr.fileExists(atPath: file.name + "/tabdelimtexthours.txt") {
+            let hoursFile: FileHandle? = FileHandle(forReadingAtPath: file.name + "/tabdelimtexthours.txt")
+            let databuffer = hoursFile?.readDataToEndOfFile()
+            hoursFile?.closeFile()
+            
+            let datastring = NSString(data: databuffer!, encoding: String.Encoding.ascii.rawValue)
+            let lines = datastring?.components(separatedBy: "\r")
+            
+            for line in lines! {
+                let words = line.components(separatedBy: "\t")
+                let index = findIndex(weekDayName: words[1])
+                let openSecs = (Double(words[2])! + Double(words[3])!/60.0) * 3600.0
+                let closeSecs = (Double(words[4])! + Double(words[5])!/60.0) * 3600.0
+                if index != nil {
+                    switch words[0]
+                    {
+                        case "Health Center":
+                            healthArray[index!].openSeconds = openSecs
+                            healthArray[index!].closeSeconds = closeSecs
+                        case "Pool":
+                            poolArray[index!].openSeconds = openSecs
+                            poolArray[index!].closeSeconds = closeSecs
+                        case "Breakfast":
+                            breakfastArray[index!].openSeconds = openSecs
+                            breakfastArray[index!].closeSeconds = closeSecs
+                        case "Lunch":
+                            lunchArray[index!].openSeconds = openSecs
+                            lunchArray[index!].closeSeconds = closeSecs
+                        case "Dinner":
+                            dinnerArray[index!].openSeconds = openSecs
+                            dinnerArray[index!].closeSeconds = closeSecs
+                        case "Keck Lab":
+                            keckArray[index!].openSeconds = openSecs
+                            keckArray[index!].closeSeconds = closeSecs
+                        case "Theater":
+                            theaterArray[index!].openSeconds = openSecs
+                            theaterArray[index!].closeSeconds = closeSecs
+                        case "Classrooms":
+                            classroomArray[index!].openSeconds = openSecs
+                            classroomArray[index!].closeSeconds = closeSecs
+                    default:
+                        presentDataFileIncorrect(alertMessage: "Could not interpret resource name \"" + words[0] + "\" in tabdelimtexthours.txt file")
+                    }
+                }
+            }
+        } else {
+             presentDataFileMissing(fileName: "tabdelimtexthours.txt")
+        }
+    }
 
+
+    func presentDataFileMissing(fileName: String) {
+        let alertController = UIAlertController(title: "Missing Data File", message: "\"" + fileName + "\" is missing", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        {
+            (result : UIAlertAction) -> Void in
+        }
+        
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        hoursTxtLoaded = false
+    }
+
+    func presentDataFileIncorrect(alertMessage: String) {
+        let alertController = UIAlertController(title: "Incorrectly Formatted Data File", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        {
+            (result : UIAlertAction) -> Void in
+        }
+        
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        hoursTxtLoaded = false
+    }
+    
+    func findIndex(weekDayName: String) -> Int? {
+        switch weekDayName
+        {
+            case "Mon":
+                return 1
+            case "Tue":
+                return 2
+            case "Wed":
+                return 3
+            case "Thu":
+                return 4
+            case "Fri":
+                return 5
+            case "Sat":
+                return 6
+            case "Sun":
+                return 0
+        default:
+            presentDataFileIncorrect(alertMessage: "Could not interpret weekday label \"" + weekDayName + "\" in tabdelimtexthours.txt file")
+            return nil
+        }
+    }
     /*
     // MARK: - Navigation
 

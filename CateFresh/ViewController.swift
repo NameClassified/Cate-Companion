@@ -9,30 +9,86 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var fileMgr:FileManager = FileManager.default
+    var docsDir:String = ""
+    var dataFile:String = ""
+    
     var file = File()
 
-    @IBAction func govTapped(_ sender: AnyObject) {
-        file.name = "constitution.pdf"
-        performSegue(withIdentifier: "pdfSegue", sender: file)
+    @IBAction func trashTapped(_ sender: Any) {
+        let dirPaths = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)
+        dataFile = dirPaths[0].appendingPathComponent("Inbox").path
+
+        let alertController = UIAlertController(title: "Delete All Data Files", message: "You are about to delete all data files", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        {
+            (result : UIAlertAction) -> Void in
+            do{
+                try self.fileMgr.removeItem(atPath: self.dataFile)
+            } catch let error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel)
+        {
+            (result : UIAlertAction) -> Void in
+        }
+
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
+    
+    @IBAction func directoryTapped(_ sender: Any) {
+        let dirPaths = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)
+        dataFile = dirPaths[0].appendingPathComponent("Inbox").path
+        print(dataFile)
+        
+        file.name = dataFile
+        performSegue(withIdentifier: "directorySegue", sender: file)
+    }
+    
     @IBAction func mapTapped(_ sender: AnyObject) {
-        file.name = "map.pdf"
+        let dirPaths = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)
+        dataFile = dirPaths[0].appendingPathComponent("Inbox/map.pdf").path
+        print(dataFile)
+        
+        file.name = dataFile
         performSegue(withIdentifier: "pdfSegue", sender: file)
     }
     @IBAction func handBookTapped(_ sender: AnyObject) {
-        file.name = "handbook.pdf"
+        let dirPaths = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)
+        dataFile = dirPaths[0].appendingPathComponent("Inbox/handbook.pdf").path
+        print(dataFile)
+        
+        file.name = dataFile
         performSegue(withIdentifier: "pdfSegue", sender: file)
     }
     @IBAction func carpTapped(_ sender: AnyObject) {
-        file.name = "carp.pdf"
+        let dirPaths = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)
+        dataFile = dirPaths[0].appendingPathComponent("Inbox/tabdelimtextcarp.txt").path
+        print(dataFile)
+        
+        file.name = dataFile
         performSegue(withIdentifier: "mapSegue", sender: file)
     }
     @IBAction func hoursTapped(_ sender: AnyObject) {
-        file.name = "hours.pdf"
+        let dirPaths = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)
+        dataFile = dirPaths[0].appendingPathComponent("Inbox").path
+        print(dataFile)
+
+        file.name = dataFile
         performSegue(withIdentifier: "hoursSegue", sender: file)
     }
     @IBAction func busTapped(_ sender: AnyObject) {
-        file.name = "bus.pdf"
+        let dirPaths = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)
+        dataFile = dirPaths[0].appendingPathComponent("Inbox/bus.pdf").path
+        print(dataFile)
+        
+        file.name = dataFile
         performSegue(withIdentifier: "pdfSegue", sender: file)
     }
 
@@ -44,8 +100,11 @@ class ViewController: UIViewController {
         } else if segue.identifier == "mapSegue" {
             let defVC = segue.destination as! MapViewController
             defVC.file = (sender as? File)!
-        } else {
+        } else if segue.identifier == "hoursSegue"{
             let defVC = segue.destination as! hoursViewController
+            defVC.file = (sender as? File)!
+        } else {
+            let defVC = segue.destination as! directoryViewController
             defVC.file = (sender as? File)!
         }
     }

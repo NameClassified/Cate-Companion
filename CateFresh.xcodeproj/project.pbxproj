@@ -12,38 +12,14 @@
 		3E32E5351DC564320079B0C0 /* hoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E32E5341DC564320079B0C0 /* hoursViewController.swift */; };
 		3E3F37F21DC275070038E8BA /* pdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F37F11DC275070038E8BA /* pdfViewController.swift */; };
 		3E3F37F41DC277800038E8BA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F37F31DC277800038E8BA /* File.swift */; };
-		3E756CA31DC3EBE40078A09B /* handbook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3E756CA21DC3EBE40078A09B /* handbook.pdf */; };
-		3E756CA51DC3EBEB0078A09B /* map.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3E756CA41DC3EBEB0078A09B /* map.pdf */; };
-		3E756CA71DC3EC630078A09B /* constitution.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3E756CA61DC3EC630078A09B /* constitution.pdf */; };
-		3E756CAC1DC3EDCC0078A09B /* bus.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3E756CAB1DC3EDCC0078A09B /* bus.pdf */; };
-		3E756CB21DC3FC160078A09B /* carp.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3E756CB11DC3FC160078A09B /* carp.pdf */; };
 		3E9EBFD01DC53911001349CF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9EBFCF1DC53911001349CF /* MapViewController.swift */; };
 		3E9EBFD31DC539DA001349CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9EBFD21DC539DA001349CF /* MapKit.framework */; };
-		3EF4BC361DC7B9D400812ACC /* hours.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3EF4BC351DC7B9D400812ACC /* hours.pdf */; };
+		3EEAA6A61E5764C100C2FEFD /* directoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAA6A51E5764C100C2FEFD /* directoryViewController.swift */; };
 		CF7C7BE81D650EDD00E93F8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C7BE71D650EDD00E93F8B /* AppDelegate.swift */; };
 		CF7C7BEA1D650EDD00E93F8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C7BE91D650EDD00E93F8B /* ViewController.swift */; };
 		CF7C7BED1D650EDD00E93F8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7C7BEB1D650EDD00E93F8B /* Main.storyboard */; };
 		CF7C7BF21D650EDD00E93F8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7C7BF01D650EDD00E93F8B /* LaunchScreen.storyboard */; };
-		CF7C7BFD1D650EDD00E93F8B /* CateFreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C7BFC1D650EDD00E93F8B /* CateFreshTests.swift */; };
-		CF7C7C081D650EDD00E93F8B /* CateFreshUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C7C071D650EDD00E93F8B /* CateFreshUITests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CF7C7BF91D650EDD00E93F8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF7C7BDC1D650EDD00E93F8B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CF7C7BE31D650EDD00E93F8B;
-			remoteInfo = CateFresh;
-		};
-		CF7C7C041D650EDD00E93F8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF7C7BDC1D650EDD00E93F8B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CF7C7BE31D650EDD00E93F8B;
-			remoteInfo = CateFresh;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3E2983471DD12C4B00F35324 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,24 +27,17 @@
 		3E32E5341DC564320079B0C0 /* hoursViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hoursViewController.swift; sourceTree = "<group>"; };
 		3E3F37F11DC275070038E8BA /* pdfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pdfViewController.swift; sourceTree = "<group>"; };
 		3E3F37F31DC277800038E8BA /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		3E756CA21DC3EBE40078A09B /* handbook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = handbook.pdf; sourceTree = "<group>"; };
-		3E756CA41DC3EBEB0078A09B /* map.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = map.pdf; sourceTree = "<group>"; };
-		3E756CA61DC3EC630078A09B /* constitution.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = constitution.pdf; sourceTree = "<group>"; };
-		3E756CAB1DC3EDCC0078A09B /* bus.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = bus.pdf; sourceTree = "<group>"; };
-		3E756CB11DC3FC160078A09B /* carp.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = carp.pdf; sourceTree = "<group>"; };
 		3E9EBFCF1DC53911001349CF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3E9EBFD21DC539DA001349CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		3EF4BC351DC7B9D400812ACC /* hours.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = hours.pdf; sourceTree = "<group>"; };
+		3EEAA6A51E5764C100C2FEFD /* directoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = directoryViewController.swift; path = ../directoryViewController.swift; sourceTree = "<group>"; };
 		CF7C7BE41D650EDD00E93F8B /* CateFresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CateFresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7C7BE71D650EDD00E93F8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF7C7BE91D650EDD00E93F8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF7C7BEC1D650EDD00E93F8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF7C7BF11D650EDD00E93F8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF7C7BF31D650EDD00E93F8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF7C7BF81D650EDD00E93F8B /* CateFreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CateFreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7C7BFC1D650EDD00E93F8B /* CateFreshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CateFreshTests.swift; sourceTree = "<group>"; };
 		CF7C7BFE1D650EDD00E93F8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF7C7C031D650EDD00E93F8B /* CateFreshUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CateFreshUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7C7C071D650EDD00E93F8B /* CateFreshUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CateFreshUITests.swift; sourceTree = "<group>"; };
 		CF7C7C091D650EDD00E93F8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,20 +48,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E9EBFD31DC539DA001349CF /* MapKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF7C7BF51D650EDD00E93F8B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF7C7C001D650EDD00E93F8B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,8 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				CF7C7BE41D650EDD00E93F8B /* CateFresh.app */,
-				CF7C7BF81D650EDD00E93F8B /* CateFreshTests.xctest */,
-				CF7C7C031D650EDD00E93F8B /* CateFreshUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,15 +89,10 @@
 				3E32E5341DC564320079B0C0 /* hoursViewController.swift */,
 				3E9EBFCF1DC53911001349CF /* MapViewController.swift */,
 				3E3F37F11DC275070038E8BA /* pdfViewController.swift */,
+				3EEAA6A51E5764C100C2FEFD /* directoryViewController.swift */,
 				3E32E5321DC53C6F0079B0C0 /* CarpLocation.swift */,
 				3E3F37F31DC277800038E8BA /* File.swift */,
 				CF7C7BEB1D650EDD00E93F8B /* Main.storyboard */,
-				3E756CA21DC3EBE40078A09B /* handbook.pdf */,
-				3EF4BC351DC7B9D400812ACC /* hours.pdf */,
-				3E756CAB1DC3EDCC0078A09B /* bus.pdf */,
-				3E756CB11DC3FC160078A09B /* carp.pdf */,
-				3E756CA41DC3EBEB0078A09B /* map.pdf */,
-				3E756CA61DC3EC630078A09B /* constitution.pdf */,
 				CF7C7BF01D650EDD00E93F8B /* LaunchScreen.storyboard */,
 				CF7C7BF31D650EDD00E93F8B /* Info.plist */,
 				3E2983471DD12C4B00F35324 /* Assets.xcassets */,
@@ -190,42 +138,6 @@
 			productReference = CF7C7BE41D650EDD00E93F8B /* CateFresh.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CF7C7BF71D650EDD00E93F8B /* CateFreshTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CF7C7C0F1D650EDE00E93F8B /* Build configuration list for PBXNativeTarget "CateFreshTests" */;
-			buildPhases = (
-				CF7C7BF41D650EDD00E93F8B /* Sources */,
-				CF7C7BF51D650EDD00E93F8B /* Frameworks */,
-				CF7C7BF61D650EDD00E93F8B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CF7C7BFA1D650EDD00E93F8B /* PBXTargetDependency */,
-			);
-			name = CateFreshTests;
-			productName = CateFreshTests;
-			productReference = CF7C7BF81D650EDD00E93F8B /* CateFreshTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		CF7C7C021D650EDD00E93F8B /* CateFreshUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CF7C7C121D650EDE00E93F8B /* Build configuration list for PBXNativeTarget "CateFreshUITests" */;
-			buildPhases = (
-				CF7C7BFF1D650EDD00E93F8B /* Sources */,
-				CF7C7C001D650EDD00E93F8B /* Frameworks */,
-				CF7C7C011D650EDD00E93F8B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CF7C7C051D650EDD00E93F8B /* PBXTargetDependency */,
-			);
-			name = CateFreshUITests;
-			productName = CateFreshUITests;
-			productReference = CF7C7C031D650EDD00E93F8B /* CateFreshUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -244,17 +156,10 @@
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
 						};
-					};
-					CF7C7BF71D650EDD00E93F8B = {
-						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
-						TestTargetID = CF7C7BE31D650EDD00E93F8B;
-					};
-					CF7C7C021D650EDD00E93F8B = {
-						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
-						TestTargetID = CF7C7BE31D650EDD00E93F8B;
 					};
 				};
 			};
@@ -272,8 +177,6 @@
 			projectRoot = "";
 			targets = (
 				CF7C7BE31D650EDD00E93F8B /* CateFresh */,
-				CF7C7BF71D650EDD00E93F8B /* CateFreshTests */,
-				CF7C7C021D650EDD00E93F8B /* CateFreshUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -283,29 +186,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E756CA51DC3EBEB0078A09B /* map.pdf in Resources */,
-				3EF4BC361DC7B9D400812ACC /* hours.pdf in Resources */,
-				3E756CAC1DC3EDCC0078A09B /* bus.pdf in Resources */,
 				CF7C7BF21D650EDD00E93F8B /* LaunchScreen.storyboard in Resources */,
-				3E756CA31DC3EBE40078A09B /* handbook.pdf in Resources */,
 				CF7C7BED1D650EDD00E93F8B /* Main.storyboard in Resources */,
-				3E756CA71DC3EC630078A09B /* constitution.pdf in Resources */,
 				3E2983481DD12C4B00F35324 /* Assets.xcassets in Resources */,
-				3E756CB21DC3FC160078A09B /* carp.pdf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF7C7BF61D650EDD00E93F8B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF7C7C011D650EDD00E93F8B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,42 +203,14 @@
 				3E3F37F41DC277800038E8BA /* File.swift in Sources */,
 				3E3F37F21DC275070038E8BA /* pdfViewController.swift in Sources */,
 				3E9EBFD01DC53911001349CF /* MapViewController.swift in Sources */,
+				3EEAA6A61E5764C100C2FEFD /* directoryViewController.swift in Sources */,
 				3E32E5331DC53C6F0079B0C0 /* CarpLocation.swift in Sources */,
 				CF7C7BE81D650EDD00E93F8B /* AppDelegate.swift in Sources */,
 				3E32E5351DC564320079B0C0 /* hoursViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF7C7BF41D650EDD00E93F8B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CF7C7BFD1D650EDD00E93F8B /* CateFreshTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF7C7BFF1D650EDD00E93F8B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CF7C7C081D650EDD00E93F8B /* CateFreshUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CF7C7BFA1D650EDD00E93F8B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CF7C7BE31D650EDD00E93F8B /* CateFresh */;
-			targetProxy = CF7C7BF91D650EDD00E93F8B /* PBXContainerItemProxy */;
-		};
-		CF7C7C051D650EDD00E93F8B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CF7C7BE31D650EDD00E93F8B /* CateFresh */;
-			targetProxy = CF7C7C041D650EDD00E93F8B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CF7C7BEB1D650EDD00E93F8B /* Main.storyboard */ = {
@@ -493,56 +348,6 @@
 			};
 			name = Release;
 		};
-		CF7C7C101D650EDE00E93F8B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = CateFreshTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pan.CateFreshTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CateFresh.app/CateFresh";
-			};
-			name = Debug;
-		};
-		CF7C7C111D650EDE00E93F8B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = CateFreshTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pan.CateFreshTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CateFresh.app/CateFresh";
-			};
-			name = Release;
-		};
-		CF7C7C131D650EDE00E93F8B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = CateFreshUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pan.CateFreshUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = CateFresh;
-			};
-			name = Debug;
-		};
-		CF7C7C141D650EDE00E93F8B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = CateFreshUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pan.CateFreshUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = CateFresh;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -560,24 +365,6 @@
 			buildConfigurations = (
 				CF7C7C0D1D650EDE00E93F8B /* Debug */,
 				CF7C7C0E1D650EDE00E93F8B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CF7C7C0F1D650EDE00E93F8B /* Build configuration list for PBXNativeTarget "CateFreshTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CF7C7C101D650EDE00E93F8B /* Debug */,
-				CF7C7C111D650EDE00E93F8B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CF7C7C121D650EDE00E93F8B /* Build configuration list for PBXNativeTarget "CateFreshUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CF7C7C131D650EDE00E93F8B /* Debug */,
-				CF7C7C141D650EDE00E93F8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

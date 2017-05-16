@@ -7,34 +7,42 @@
 //
 
 import UIKit
-import WebKit
 
-class pdfViewController: UIViewController, WKNavigationDelegate {
+class pdfViewController: UIViewController{
     
-    var webView: WKWebView!
-    
+    @IBOutlet weak var webView: UIWebView!
+
     var file = File()
     
-    override func loadView() {
-        webView = WKWebView()
-        webView.navigationDelegate = self
-        view = webView
-    }
-    
     override func viewDidLoad() {
+        
+        let fileMgr = FileManager.default
+        
+        if !fileMgr.fileExists(atPath: file.name) {
+            let shortFileName = file.name.components(separatedBy: "/")
+            
+            let alertController = UIAlertController(title: "Missing Data File", message: "\"" + shortFileName[shortFileName.count - 1] + "\" is missing", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+            {
+                (result : UIAlertAction) -> Void in
+            }
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            // Create an NSURL object based on the file path.
+            let url = NSURL.fileURL(withPath: file.name)
+
+            // Create an NSURLRequest object.
+            let request = NSURLRequest(url: url)
+            
+            // Load the web viewer using the request object.
+            webView.loadRequest(request as URLRequest)
+        }
+        
         super.viewDidLoad()
-        
-        // Get the document's file path.
-        let path = Bundle.main.path(forResource: file.name, ofType: nil)
-        
-        // Create an NSURL object based on the file path.
-        let url = NSURL.fileURL(withPath: path!)
-        
-        // Create an NSURLRequest object.
-        let request = NSURLRequest(url: url)
-        
-        // Load the web viewer using the request object.
-        webView.load(request as URLRequest)
     }
 
     override func didReceiveMemoryWarning() {
